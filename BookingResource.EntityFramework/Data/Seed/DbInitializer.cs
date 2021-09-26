@@ -40,19 +40,16 @@ namespace BookingResource.EntityFramework.Data.Seed
                     {
                         var resource1 = new Resource
                         {
-                            Id = 1,
                             Name = "Printer Hp",
                             Quantity = 10
                         };
                         var resource2 = new Resource
                         {
-                            Id = 2,
                             Name = "Printer Samsung",
                             Quantity = 10
                         };
                         var resource3 = new Resource
                         {
-                            Id = 3,
                             Name = "Scanner Hp",
                             Quantity = 10
                         };
