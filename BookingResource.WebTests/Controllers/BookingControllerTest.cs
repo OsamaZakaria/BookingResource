@@ -30,14 +30,5 @@ namespace Resource.web.Tests
 
             Assert.IsInstanceOfType(result.Result, typeof(Microsoft.AspNetCore.Mvc.BadRequestResult));
         }
-        [TestMethod()]
-        public void BookResource_WithInvalidModel_ReturnBadRequest()
-        {
-
-            var controller = new BookingController(_bookingService.Object, _bookingValidationService.Object);
-            var result = controller.BookResource(new BookResourceDto() {ResourceId = 1 , DateFrom = DateTime.Now.AddDays(5), DateTo = DateTime.Now});
-
-            Assert.IsInstanceOfType(result.Result, typeof(Microsoft.AspNetCore.Mvc.BadRequestResult));
-        }
     }
 }
