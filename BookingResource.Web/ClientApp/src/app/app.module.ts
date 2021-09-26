@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module';
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
@@ -23,8 +22,7 @@ import { BookResourceDialogComponent } from './resources/bookResourceDialog.comp
     NavMenuComponent,
     ResourceComponent,
     BookResourceDialogComponent,
-    HomeComponent,
-    FetchDataComponent
+    HomeComponent
   ],
   entryComponents: [BookResourceDialogComponent],
   imports: [
@@ -39,7 +37,6 @@ import { BookResourceDialogComponent } from './resources/bookResourceDialog.comp
     ApiAuthorizationModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
       { path: 'resource', component: ResourceComponent, canActivate: [AuthorizeGuard] },
     ])
   ],

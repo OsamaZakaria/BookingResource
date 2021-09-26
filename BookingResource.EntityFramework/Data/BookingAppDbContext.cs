@@ -14,13 +14,14 @@ namespace BookingResource.EntityFramework.Data
 {
     public class BookingAppDbContext : ApiAuthorizationDbContext<ApplicationUser>
     {
+        
         public BookingAppDbContext(
             DbContextOptions options, IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
         }
         public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<Resource> Resources { get; set; }
+       
 
-      
     }
 }

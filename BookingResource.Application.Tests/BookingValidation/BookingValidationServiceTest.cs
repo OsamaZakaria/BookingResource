@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BookingResource.Web.Controllers;
+using BookingResource.Application.BookingValidation;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,16 +7,16 @@ using System.Text;
 namespace BookingResource.Tests
 {
     [TestClass()]
-    public class ResourceTests
+    public class BookingValidationServiceTest
     {
         [TestMethod()]
-        public void GetAllTest()
+        public void ResourceAvailablityTest()
         {
             Assert.Fail();
         }
 
         [TestMethod()]
-        public void GetAllTest1()
+        public void ResourceAvailablityTest1()
         {
             Assert.Fail();
         }

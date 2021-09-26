@@ -9,11 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingResource.Application
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingResource.Core", "BookingResource.Core\BookingResource.Core.csproj", "{44A5DCDB-C225-4959-AD1C-AC69992BCA91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingResource.Web", "BookingResource.Web\BookingResource.Web.csproj", "{D38177D4-3071-4E31-BFD9-A6360C3B235E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingResource.Web", "BookingResource.Web\BookingResource.Web.csproj", "{D38177D4-3071-4E31-BFD9-A6360C3B235E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{9CC8B843-4577-46D5-AFFD-2751AE1CB148}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingResource.Application.Tests", "BookingResource.Application.Tests\BookingResource.Application.Tests.csproj", "{5B8DE38C-E037-4109-8D92-884BBA4FBDA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingResource.Application.Tests", "BookingResource.Application.Tests\BookingResource.Application.Tests.csproj", "{5B8DE38C-E037-4109-8D92-884BBA4FBDA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,6 +2,7 @@
 using BookingResource.Application.Resource;
 using BookingResource.EntityFramework;
 using BookingResource.EntityFramework.Data;
+using BookingResource.EntityFramework.Data.Seed;
 using BookingResource.EntityFramework.IData;
 using BookingResource.EntityFramework.User;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,9 @@ namespace BookingResource.Application.ServicesRegistration
                     configuration.GetConnectionString("DefaultConnection")));
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+            services.AddScoped<IDbInitializer, DbInitializer>();
+
         }
     }
 }
