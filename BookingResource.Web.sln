@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingResource.Web", "Book
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{9CC8B843-4577-46D5-AFFD-2751AE1CB148}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingResource.Application.Tests", "BookingResource.Application.Tests\BookingResource.Application.Tests.csproj", "{5B8DE38C-E037-4109-8D92-884BBA4FBDA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingResource.WebTests", "BookingResource.WebTests\BookingResource.WebTests.csproj", "{ED0A1724-CC86-4818-9F39-0F0FF3B5C16D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,16 +37,13 @@ Global
 		{D38177D4-3071-4E31-BFD9-A6360C3B235E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D38177D4-3071-4E31-BFD9-A6360C3B235E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D38177D4-3071-4E31-BFD9-A6360C3B235E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5B8DE38C-E037-4109-8D92-884BBA4FBDA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B8DE38C-E037-4109-8D92-884BBA4FBDA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B8DE38C-E037-4109-8D92-884BBA4FBDA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B8DE38C-E037-4109-8D92-884BBA4FBDA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED0A1724-CC86-4818-9F39-0F0FF3B5C16D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED0A1724-CC86-4818-9F39-0F0FF3B5C16D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED0A1724-CC86-4818-9F39-0F0FF3B5C16D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED0A1724-CC86-4818-9F39-0F0FF3B5C16D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{5B8DE38C-E037-4109-8D92-884BBA4FBDA0} = {9CC8B843-4577-46D5-AFFD-2751AE1CB148}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8FF6A6F5-2AFE-4B4D-A1B5-B512FE4C2A76}

@@ -1,7 +1,10 @@
 ﻿using BookingResource.Application.Resource;
+using BookingResource.Application.Resource.Dto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BookingResource.Web.Controllers
 {
@@ -14,11 +17,15 @@ namespace BookingResource.Web.Controllers
             _resourceService = resourceService;
         }
         [HttpGet("api/Resource")]
-        public IActionResult GetAll()
+        public async Task<ActionResult<List<ResourceDto>>> GetAll()
         {
            try
             {
-                return Ok(_resourceService.GetAllResources());
+                var result = await Task.Run(() => _resourceService.GetAllResources());
+
+                if (result == null)
+                    return NotFound();
+                return  Ok(result);
             }
             catch (Exception)
             {
