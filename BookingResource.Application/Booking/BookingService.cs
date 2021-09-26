@@ -1,6 +1,7 @@
 ﻿using BookingResource.Application.Booking.Dto;
 using BookingResource.Application.BookingValidation;
 using BookingResource.EntityFramework.IData;
+using System;
 using System.Threading.Tasks;
 
 namespace BookingResource.Application.Booking
@@ -15,14 +16,15 @@ namespace BookingResource.Application.Booking
 
         public async Task<bool> BookResource(BookResourceDto resource)
         {
-           await _unitOfWork.Bookings.AddAsync(new Core.Booking()
-           {
-               ResourceId = resource.ResourceId,
-               DateFrom = resource.DateFrom,
-               DateTo = resource.DateTo,
-               BookedQuantity = resource.Quantity
-           });
-           await _unitOfWork.SaveChanges();
+            await _unitOfWork.Bookings.AddAsync(new Core.Booking()
+            {
+                ResourceId = resource.ResourceId,
+                DateFrom = resource.DateFrom,
+                DateTo = resource.DateTo,
+                BookedQuantity = resource.Quantity
+            });
+            await _unitOfWork.SaveChanges();
+            Console.Write($"EMAIL SENT TO admin@admin.com FOR CREATED BOOKING WITH ID {resource.ResourceId}");
             return true;
         }
     }
