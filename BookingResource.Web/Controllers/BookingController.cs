@@ -27,14 +27,13 @@ namespace BookingResource.Web.Controllers
                 if (bookResource == null)
                     return BadRequest();
 
-                var validData = _bookingValidationService.ValidateBookingObject(bookResource);
 
-                if (!validData.IsValid)
-                    return BadRequest(validData.ErrorMessage);
+                if (!ModelState.IsValid)
+                    return StatusCode(StatusCodes.Status400BadRequest , "Model Not Valid");
 
                 var validateAvailability = _bookingValidationService.ResourceIsAvailable(bookResource);
                 if (!validateAvailability.IsValid)
-                    return BadRequest($"Error, {validateAvailability.ErrorMessage}");
+                    return StatusCode(StatusCodes.Status400BadRequest, $"Error, {validateAvailability.ErrorMessage}");
 
                 var result = await _bookingService.BookResource(bookResource);
 
