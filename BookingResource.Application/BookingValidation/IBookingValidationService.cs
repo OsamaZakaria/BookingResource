@@ -9,5 +9,6 @@ namespace BookingResource.Application.BookingValidation
     public interface IBookingValidationService
     {
         BookingValidationResultDto ResourceIsAvailable(BookResourceDto bookResource);
+        BookingValidationResultDto ValidateBookingObject(BookResourceDto bookResource);
     }
 }

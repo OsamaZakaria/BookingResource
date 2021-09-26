@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingResource.Core", "Boo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingResource.Web", "BookingResource.Web\BookingResource.Web.csproj", "{D38177D4-3071-4E31-BFD9-A6360C3B235E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{9CC8B843-4577-46D5-AFFD-2751AE1CB148}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingResource.WebTests", "BookingResource.WebTests\BookingResource.WebTests.csproj", "{ED0A1724-CC86-4818-9F39-0F0FF3B5C16D}"
 EndProject
 Global

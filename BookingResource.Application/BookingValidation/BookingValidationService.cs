@@ -2,6 +2,7 @@
 using BookingResource.Application.BookingValidation.ErrorModel;
 using BookingResource.EntityFramework.IData;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,6 +14,29 @@ namespace BookingResource.Application.BookingValidation
         public BookingValidationService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
+        }
+        public BookingValidationResultDto ValidateBookingObject(BookResourceDto bookResource)
+        {
+            BookingValidationResultDto result = new BookingValidationResultDto() { IsValid = true };
+
+            if (bookResource.DateFrom >= bookResource.DateTo)
+            {
+                result.ErrorMessage= "Date To must be greater Than Date From.";
+                return result;
+            }
+
+            if (bookResource.DateFrom < DateTime.Now)
+            {
+                result.ErrorMessage = "Date To must be greater Now.";
+                return result;
+               
+            }
+            if (bookResource.Quantity <= 0)
+            {
+                result.ErrorMessage = "Quantity must be greater Than 0.";
+                return result;
+            }
+            return result;
         }
         public BookingValidationResultDto ResourceIsAvailable(BookResourceDto bookResource)
         {

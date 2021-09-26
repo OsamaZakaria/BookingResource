@@ -20,15 +20,18 @@ namespace BookingResource.Web.Controllers
             _bookingValidationService = bookingValidationService;
         }
         [HttpPost("api/Booking")]
-        public async Task<ActionResult> BookResource([FromBody]BookResourceDto bookResource)
+        public async Task<ActionResult> BookResource([FromBody] BookResourceDto bookResource)
         {
             try
             {
                 if (bookResource == null)
                     return BadRequest();
 
-                if (!ModelState.IsValid)
-                    return BadRequest(ModelState);
+                var validData = _bookingValidationService.ValidateBookingObject(bookResource);
+
+                if (!validData.IsValid)
+                    return BadRequest(validData.ErrorMessage);
+
                 var validateAvailability = _bookingValidationService.ResourceIsAvailable(bookResource);
                 if (!validateAvailability.IsValid)
                     return BadRequest($"Error, {validateAvailability.ErrorMessage}");
