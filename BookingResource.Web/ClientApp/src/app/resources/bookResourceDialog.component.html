@@ -1,0 +1,26 @@
+<form (ngSubmit)="onSubmit()" #ngForm="ngForm">
+  <h1 mat-dialog-title>Booking {{resource.name}}</h1>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Date From</mat-label>
+      <input matInput required name="DateFrom" [matDatepicker]="DateFrom" [(ngModel)]="bookObject.dateFrom">
+      <mat-datepicker-toggle matSuffix [for]="DateFrom"></mat-datepicker-toggle>
+      <mat-datepicker #DateFrom></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Date To</mat-label>
+      <input matInput name="dateTo" required [matDatepicker]="dateTo" [(ngModel)]="bookObject.dateTo">
+      <mat-datepicker-toggle matSuffix [for]="dateTo"></mat-datepicker-toggle>
+      <mat-datepicker #dateTo></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Quantity</mat-label>
+      <input type="number" name="quantity" required matInput [(ngModel)]="bookObject.quantity">
+    </mat-form-field>
+  </div>
+  <button mat-raised-button type="submit" [disabled]="!ngForm.valid" color="primary">submit</button>
+</form>
