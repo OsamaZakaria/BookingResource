@@ -39,7 +39,7 @@ namespace Resource.web.Tests
             Assert.IsInstanceOfType(result.Result, typeof(Microsoft.AspNetCore.Mvc.NotFoundResult));
         }
 
-        public List<BookingResource.Application.Resource.Dto.ResourceDto> MockResources()
+        public List<ResourceDto> MockResources()
         {
             return new List<BookingResource.Application.Resource.Dto.ResourceDto>()
             {

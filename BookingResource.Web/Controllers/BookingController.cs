@@ -1,6 +1,7 @@
 ﻿using BookingResource.Application.Booking;
 using BookingResource.Application.Booking.Dto;
 using BookingResource.Application.BookingValidation;
+using BookingResource.Application.Helper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -29,19 +30,20 @@ namespace BookingResource.Web.Controllers
 
 
                 if (!ModelState.IsValid)
-                    return StatusCode(StatusCodes.Status400BadRequest , "Model Not Valid");
+                    return StatusCode(StatusCodes.Status400BadRequest , RequestResponse.ModelStateNotValid);
 
                 var validateAvailability = _bookingValidationService.ResourceIsAvailable(bookResource);
+
                 if (!validateAvailability.IsValid)
-                    return StatusCode(StatusCodes.Status400BadRequest, $"Error, {validateAvailability.ErrorMessage}");
+                    return StatusCode(StatusCodes.Status400BadRequest, $"{validateAvailability.ErrorMessage}");
 
                 var result = await _bookingService.BookResource(bookResource);
 
-                return result ? Ok("Success, Resource booked successfully") : StatusCode(StatusCodes.Status500InternalServerError, "Error, failed to book resource");
+                return result ? Ok(RequestResponse.SuccessBooking) : StatusCode(StatusCodes.Status500InternalServerError, RequestResponse.FailTooBookUnExpected);
             }
             catch
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error, Unexpected error");
+                return StatusCode(StatusCodes.Status500InternalServerError, RequestResponse.FailTooBookUnExpected);
             }
         }
     }

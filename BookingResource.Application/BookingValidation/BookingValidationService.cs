@@ -1,5 +1,6 @@
 ﻿using BookingResource.Application.Booking.Dto;
 using BookingResource.Application.BookingValidation.ErrorModel;
+using BookingResource.Application.Helper;
 using BookingResource.EntityFramework.IData;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -52,10 +53,10 @@ namespace BookingResource.Application.BookingValidation
                 return new BookingValidationResultDto() { IsValid = true };
 
             else if(bookResource.Quantity > resource.Quantity)
-                return new BookingValidationResultDto() { IsValid = false, ErrorMessage = "Required quantity greater than available quantity" };
+                return new BookingValidationResultDto() { IsValid = false, ErrorMessage = RequestResponse.RequiredNotAvailable };
 
             else if (((resource.Quantity - listResources.Sum(r => r.BookedQuantity)) < bookResource.Quantity))
-                return new BookingValidationResultDto() { IsValid = false , ErrorMessage = "Required quantity greater than available quantity" };
+                return new BookingValidationResultDto() { IsValid = false , ErrorMessage = RequestResponse.RequiredNotAvailable };
             return result;
         }
     }
