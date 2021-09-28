@@ -16,6 +16,6 @@ export class BookResourceService {
 
 
   create(data): Observable<any> {
-    return this.httpClient.post(this._baseUrl, data,{responseType: 'text'});
+    return this.httpClient.post(this._baseUrl, data, {responseType: 'text'});
   }
 }

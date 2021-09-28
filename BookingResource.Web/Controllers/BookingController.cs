@@ -4,6 +4,7 @@ using BookingResource.Application.BookingValidation;
 using BookingResource.Application.Helper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,9 +29,10 @@ namespace BookingResource.Web.Controllers
                 if (bookResource == null)
                     return BadRequest();
 
-
                 if (!ModelState.IsValid)
-                    return StatusCode(StatusCodes.Status400BadRequest , RequestResponse.ModelStateNotValid);
+                    return StatusCode(StatusCodes.Status400BadRequest , string.Join("; ", ModelState.Values
+                                        .SelectMany(x => x.Errors)
+                                        .Select(x => x.ErrorMessage)));
 
                 var validateAvailability = _bookingValidationService.ResourceIsAvailable(bookResource);
 

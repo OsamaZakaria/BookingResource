@@ -34,7 +34,7 @@ export class BookResourceDialogComponent implements OnInit{
         },
         error => {
           console.log(error);
-          this.alert.open(error, 'error', {
+             this.alert.open(error.error, 'error', {
             duration: 2000,
           });
         });
